@@ -1,7 +1,6 @@
 {
   "name": "mongo-express-js",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npx babel-node api/index.js"
@@ -11,8 +10,8 @@
     "mongoose": "5.11.19"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Luiz Lima",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
