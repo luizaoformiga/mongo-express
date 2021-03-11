@@ -21,6 +21,4 @@ mongoose.connection.on('error', () => {
 })
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {
-  connect: () => mongoose.connect(config.uri, config.options)
-}
+export default { connect: () => mongoose.connect(config.uri, config.options) } 
