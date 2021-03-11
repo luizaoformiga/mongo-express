@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import config from '../config';
+import config from '../config/config';
 
 async function verifyToken(request, response, next) {
   const token = request.headers.authorization && request.headers.authorization.split(" ")[0] === 'Bearer'

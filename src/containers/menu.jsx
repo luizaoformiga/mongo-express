@@ -4,7 +4,7 @@ export default function App() {
   const [users, setUsers] = useState([]);
  
   useEffect(() => {
-    fetch('http://localhost:8007/users')
+    fetch('')
       .then(response => response.json())
       .then(response => { setUsers({...users, users: response })
       .catch(error => console.log("ERROR: " + error))

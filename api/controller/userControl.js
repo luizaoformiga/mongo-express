@@ -1,4 +1,5 @@
 import UserModel from '../models/user';
+import generateToken from '../services/auth';
 
 export default class UserControl {
   async get(request, response) {
@@ -13,7 +14,7 @@ export default class UserControl {
   
   async getId(request, response) {
     try {
-      const user = await UserModel.findById(request.params.id);
+      const user = await UserModel.findById(request.decoded);
       return response.status(200).json(user);
   
     } catch (error) {
@@ -25,12 +26,13 @@ export default class UserControl {
     const user = new UserModel({
       firstName: request.body.firstName,
       lastName: request.body.lastName,
-      email: request.body.email
+      email: request.body.email,
+      password: request.body.password
     })
-  
+
     try {
-      const data = await user.save();
-      return response.status(201).json(data); 
+      const token = await generateToken(user.save());
+      return response.status(201).json(token); 
     
     } catch (error) {
       response.status(401).json("ERROR: " + error);
@@ -39,12 +41,20 @@ export default class UserControl {
 
   async put(request, response) {
     try {
-      const { id } = request.params;
-      const user = await UserModel.updateOne(id, request.body);
-      return response.status(201).json(user);    
+      const user = new UserModel({
+        firstName: request.body.firstName,
+        lastName: request.body.lastName,
+        email: request.body.email,
+        password: request.body.password
+      })
+
+      const userResponse = UserModel.updateOne(user, request.body);
+      const token = await generateToken(userResponse);
+
+      return response.status(201).json(token);    
 
     } catch (error) {
-      return response.status(404).json(error, { message: "NOT FOUND"});
+      return response.status(404).json(error, { message: "USER EXISTS"});
     }
   }
 
@@ -61,9 +71,11 @@ export default class UserControl {
 
   async delete(request, response) {
     try {
-      const { id } = request.params;
-      const user = await UserModel.deleteOne(id);
-      return response.status(200).json(user);
+      const { id } = request.decoded;
+      const user = UserModel.deleteOne(id);
+      const token = await generateToken(user);
+
+      return response.status(200).json(token);
 
     } catch (error) {
       return response.status(404).json(error, { message: 'NOT FOUND'}); 

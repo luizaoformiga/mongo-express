@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 
 const config = {
-  uri: 'mongodb://localhost:27017/node-hapijs',
+  uri: 'mongodb://localhost:27017/node-express',
   options: {
     useNewUrlParser: true,
     useFindAndModify: false,

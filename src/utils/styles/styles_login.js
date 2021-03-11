@@ -13,6 +13,12 @@ export const Body = styled.body`
   background-color: #191d3a;
   height: 1024px;
   width: 1440px;
+
+  @media (min-width: 1024px) {
+    background-color: #191d3a;
+    height: 1024px;
+    width: 1440px;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -40,7 +46,7 @@ export const P = styled.p`
   font-family: "Segoe UI";
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 53px;
 
   color: #790242;  
