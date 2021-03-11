@@ -1,26 +1,19 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { Body, DivLogin, GlobalStyle, H1, Input, P, Button } from '../utils/styles/styles';
 
 export default function Login() {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
-
-  console.log(watch("example")); // watch input value by passing the name of it
-
-  return (
+  return(
     <div>
-        {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
-        <form onSubmit={handleSubmit(onSubmit)}>
-           {/* register your input into the hook by invoking the "register" function */}
-           <input name="example" defaultValue="test" ref={register} />
-
-           {/* include validation with required or other standard HTML validation rules */}
-           <input name="exampleRequired" ref={register({ required: true })} />
-           {/* errors will return when field validation fails  */}
-           {errors.exampleRequired && <span>This field is required</span>}
-      
-           <input type="submit" />
-       </form>
-    </div>  
+      <GlobalStyle/>
+      <Body>
+        <H1>To be Herobank is to reinvent your financial life</H1>
+        <DivLogin>
+          <P>Please. Enter in your account.</P>
+          <Input type="email" placeholder="Email"/>
+          <Input type="password" placeholder="Password"/>
+          <Button>GO!</Button>
+        </DivLogin>
+      </Body>
+    </div>
   )
 }

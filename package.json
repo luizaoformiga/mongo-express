@@ -2,7 +2,11 @@
   "name": "api-react",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
+    "react-router-dom": "5.2.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.4",
     "@testing-library/user-event": "^12.6.3",
