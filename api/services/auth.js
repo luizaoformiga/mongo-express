@@ -1,8 +1,6 @@
 import jwt from 'jsonwebtoken';
-import config from '../config/config';
 
-const generateToken = (payload) => {
-    return jwt.sign(payload, config.privateKey, config.authOptions);
-}
+const secret = "AsoijdALKJD798sadnUFS&DWJKÒPSDKPdjfdfij789";
 
-export { generateToken }
+export const sign = payload => jwt.sign(payload, secret, { expiresIn: 86400 });
+export const verifyToken = token => jwt.verify(token, secret);

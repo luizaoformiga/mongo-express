@@ -1,6 +1,6 @@
 {
-    "firstName" : "Primeiro nome",
-    "lastName": "Último nome",
-    "email": "email@example",
-    "password": "agablaga"
+    "firstName" : "required: false",
+    "lastName": "required: false",
+    "email": "required: true",
+    "password": "required: true"
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Body, DivLogin, GlobalStyle, H1, Input, P, Button } from '../utils/styles/styles';
+import { Body, DivLogin, GlobalStyle, H1, Input, P, Button } from '../utils/styles/styles_login';
 
 export default function Login() {
   return(

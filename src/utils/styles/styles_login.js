@@ -13,26 +13,20 @@ export const Body = styled.body`
   background-color: #191d3a;
   height: 1024px;
   width: 1440px;
-
-  @media (min-width: 1024px) {
-    background-color: #191d3a;
-    height: 1024px;
-    width: 1440px;
-  }
 `;
 
 export const H1 = styled.h1`
   position: absolute;
   width: 595px;
-  height: 288px;
-  left: 51px;
-  top: 273px;
+  height: 297px;
+  left: 102px;
+  top: 313px;
 
-  font-family: "Segoe UI";
+  font-family: Segoe UI;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px;
-  line-height: 96px;
+  font-size: 70px;
+  line-height: 93px;
 
   color: #FFFFFF;
 `;
@@ -40,16 +34,16 @@ export const H1 = styled.h1`
 export const P = styled.p`
   width: 516px;
   height: 53px;
-  left: 772px;
-  top: 241px;
+  left: 771px;
+  top: 236px;
 
-  font-family: "Segoe UI";
+  font-family: Segoe UI;
   font-style: normal;
   font-weight: normal;
-  font-size: 35px;
+  font-size: 40px;
   line-height: 53px;
 
-  color: #790242;  
+  color: #790242;
 `;
 
 export const Input = styled.input`
@@ -63,6 +57,8 @@ export const Input = styled.input`
   padding-left: 10px;
   margin-top: 40px;
 
+  border: none;
+
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #8E8C8C;
   border-radius: 5px;
   
@@ -75,20 +71,19 @@ export const Input = styled.input`
 
 export const DivLogin = styled.div`
   position: absolute;
-  width: 600px;
-  height: 600px;
-  left: 720px;
-  top: 210px;
-
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column; 
-  text-align: center;
-  align-items: center;
+  width: 628px;
+  height: 596.6px;
+  left: 710px;
+  top: 216px;
 
   background: #0E101C;
-  border-radius: 10px;
+  border-radius: 10.4667px;
+
+  text-align: center;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 `;
 
 export const Button = styled.button`
@@ -113,4 +108,18 @@ export const Button = styled.button`
     transition: 0.5s;
   }
 `;
+
+export const ImageStyle = styled.image`
+  position: absolute;
+  width: 1441px;
+  height: 1024px;
+  left: -1px;
+  top: 0px;
+
+  background: url('../img/mulher-feliz.png');
+  border: 1px solid #000000;
+  box-sizing: border-box;
+`;
+
+
 

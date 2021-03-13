@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { GlobalStyle, Body, Button } from '../utils/styles/styles_login';
+import { DivMenu, H1Menu } from '../utils/styles/styles_menu';
 
-export default function App() {
+export default function Menu() {
   const [users, setUsers] = useState([]);
  
   useEffect(() => {
-    fetch('')
+    fetch('http://localhost:7769/sign')
       .then(response => response.json())
       .then(response => { setUsers({...users, users: response })
       .catch(error => console.log("ERROR: " + error))
@@ -12,15 +14,12 @@ export default function App() {
   })
 
   return (
-    <>
-    <h1>ola</h1>
-      {users.map((login, data) => (
-        <li key={data}>
-          <h2><strong>Título: {login.email}</strong></h2>
-          <p>Primeiro Nome: {login.firstName}</p>
-          <p>sobrenome: {login.lastName}</p>
-        </li>
-      ))}
-    </>  
+    <Body>
+    <GlobalStyle/>
+      <DivMenu>
+        <H1Menu>Hello! Welcome!</H1Menu>
+        <Button>Exit</Button>
+      </DivMenu>   
+    </Body>  
   );
 };

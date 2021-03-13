@@ -1,14 +1,11 @@
 import express from 'express';
-import UserControl from '../controller/userControl';
+import Login from '../controller/login';
 
 const route = express.Router();
-const userRoute = new UserControl();
 
-route.post('/users', userRoute.post);
-route.get('/users', userRoute.get);
-route.get('/users/:id', userRoute.getId);
-route.put('/users', userRoute.put);
-route.patch('users/:id', userRoute.patch);
-route.delete('/users/:id', userRoute.delete);
+const routeSign = new Login();
+
+route.get('/login', routeSign.get);
+route.post('/sign', routeSign.post);
 
 export default route;
