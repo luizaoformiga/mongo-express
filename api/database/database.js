@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
+dotenv.config();
 mongoose.Promise = global.Promise;
 
+const URL = process.env.MONGO_URL;
 const config = {
-  uri: 'mongodb://localhost:27017/node-express',
+  uri: `${URL}`,
   options: {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -20,6 +23,6 @@ mongoose.connection.on('error', () => {
   throw new Error('Could not connect to MongoDB.');
 })
 
-//http://localhost:7769/sign
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { connect: () => mongoose.connect(config.uri, config.options) } 
+const database = { connect: () => mongoose.connect(config.uri, config.options) } 
+
+export default database;

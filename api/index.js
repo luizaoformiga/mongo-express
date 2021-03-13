@@ -4,8 +4,9 @@ import database from './database/database';
 import route from './routes/router';
 import cors from 'cors';
     
+//process.env.PORT
 const app = express();
-const port = 7769;
+const port = 7759;
 
 database.connect();
 
@@ -15,4 +16,5 @@ app.use(express.json());
 app.use(route);
 app.use(cors());
 
-app.listen(port, () => console.log(`Server running at: 7769`));
+// http://localhost:7759/sign
+app.listen(port, () => console.log(`Server running at: 7759`));
