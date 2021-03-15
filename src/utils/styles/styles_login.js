@@ -10,18 +10,31 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Body = styled.body`
-  background-color: #191d3a;
-  height: 1024px;
-  width: 1440px;
+  background-image: linear-gradient(rgba(25, 29, 58, 0.829), rgba(25, 29, 58, 0.829)), url('./src/utils/img/mulher-feliz.png') ;
+  background-repeat: no-repeat;
+  background-size: cover;  
+
+  @media (max-width: 800px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+`;
+
+export const Main = styled.main`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 100px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const H1 = styled.h1`
-  position: absolute;
-  width: 595px;
-  height: 297px;
-  left: 102px;
-  top: 313px;
-
   font-family: Segoe UI;
   font-style: normal;
   font-weight: normal;
@@ -29,26 +42,31 @@ export const H1 = styled.h1`
   line-height: 93px;
 
   color: #FFFFFF;
+
+  @media (max-width: 800px) {
+    font-size: 30px;
+    text-align: center;
+  }
 `;
 
 export const P = styled.p`
-  width: 516px;
-  height: 53px;
-  left: 771px;
-  top: 236px;
-
   font-family: Segoe UI;
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 53px;
 
   color: #790242;
+
+  @media (max-width: 800px) {
+    font-size: 30px;  
+    width: 50%;
+  }
 `;
 
 export const Input = styled.input`
   width: 380px;
-  height: 80px;
+  height: 60px;
   left: 840px;
   top: 337px;
 
@@ -61,16 +79,20 @@ export const Input = styled.input`
 
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #8E8C8C;
   border-radius: 5px;
-  
+
   &:hover{
     color: #790242;
     border: 4px solid #790242; 
     transition: 0.3s;
   }
+
+  @media (max-width: 800px) {
+    width: 280px;
+    height: 50px;
+  }
 `;
 
 export const DivLogin = styled.div`
-  position: absolute;
   width: 628px;
   height: 596.6px;
   left: 710px;
@@ -78,12 +100,17 @@ export const DivLogin = styled.div`
 
   background: #0E101C;
   border-radius: 10.4667px;
-
   text-align: center;
   display: flex;  
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
+  @media (max-width: 800px) {
+    width: 320px;
+    align-items: center;
+    margin-bottom: 250px;
+  }
 `;
 
 export const Button = styled.button`
@@ -95,7 +122,7 @@ export const Button = styled.button`
   font-family: "Segoe UI";
   font-size: 40px;
   color: #ffffff;
-  margin-top: 80px; 
+  margin-top: 100px; 
 
   background: #05081F;
   border: 4px solid #FFFFFF;
@@ -107,18 +134,11 @@ export const Button = styled.button`
     border: 4px solid #790242; 
     transition: 0.5s;
   }
-`;
 
-export const ImageStyle = styled.image`
-  position: absolute;
-  width: 1441px;
-  height: 1024px;
-  left: -1px;
-  top: 0px;
-
-  background: url('../img/mulher-feliz.png');
-  border: 1px solid #000000;
-  box-sizing: border-box;
+  @media (max-width: 800px) {
+    width: 280px;
+    height: 80px;
+  }
 `;
 
 
