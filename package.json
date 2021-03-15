@@ -16,6 +16,8 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/styled-components": "^5.1.7",
+    "babel-core": "^6.26.3",
+    "babel-node": "0.0.1-security",
     "cors": "2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
@@ -36,7 +38,7 @@
   },
   "scripts": {
     "test-jest": "npx jest",
-    "start-api": "npx nodemon api/index.js",
+    "start-api": "npx babel-node api/index.js",
     "dev": "npm run start",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -62,11 +64,11 @@
     ]
   },
   "devDependencies": {
+    "babel-preset-es2015": "6.24.1",
+    "@babel/preset-react": "7.12.13",
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "@babel/cli": "7.13.0",
     "nodemon": "2.0.7"
   }
 }

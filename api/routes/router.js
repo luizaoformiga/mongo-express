@@ -3,9 +3,9 @@ import Login from '../controller/login';
 
 const route = express.Router();
 
-const routeSign = new Login();
+const routeLogin = new Login();
 
-route.get('/', routeSign.get);
-route.post('/login', routeSign.post);
+route.get('/sign', routeLogin.get);
+route.post('/login', routeLogin.post);
 
 export default route;

@@ -7,7 +7,7 @@ export default class Login {
       const { password, ...user } = result.toObject();
       const responseUser = user;
 
-      return response.status(201).json({ result, responseUser }); 
+      return response.status(200).json({ result, responseUser }); 
 
     } catch (error) {
       return response.status(403).json(error);  

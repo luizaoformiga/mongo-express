@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 mongoose.Promise = global.Promise;
 
-const URL = process.env.MONGO_URL;
+const URL = process.env.DATABASE_URL;
 const config = {
   uri: `${URL}`,
   options: {
@@ -23,6 +23,8 @@ mongoose.connection.on('error', () => {
   throw new Error('Could not connect to MongoDB.');
 })
 
-const database = { connect: () => mongoose.connect(config.uri, config.options) } 
+const database = { 
+  connect: () => mongoose.connect(config.uri, config.options) 
+} 
 
 export default database;

@@ -3,8 +3,7 @@ import React from 'react';
 export default function Sign() {
   return(
     <>
-      <form>
-      </form>
+     <p>ola</p>
     </>
   )
 }

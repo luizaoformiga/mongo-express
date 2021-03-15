@@ -1,57 +1,49 @@
 import React, { useState } from 'react';
 import api from '../api/api';
-import { Body, DivLogin, GlobalStyle, H1, Input, P, Button } from '../utils/styles/styles_login';
+//import { Body, DivLogin, GlobalStyle, H1, Input, P, Button } from '../utils/styles/styles_login';
 
 export default function Login() {
-  const [form, setForm] = useState({
-    email_user: '', 
-    password_user: ''
-  })
+  const [formEmail, setFormEmail] = useState('');
+  const [formPassword, setFormPassword] = useState('');
 
   const handleSubmit = async () => {
-    const data = {
-      email: form.email_user,
-      password: form.password_user 
-    }
-    
-    if(form.email === '' && form.password === '') {
-      const response = await api.post('/', data);
- 
-      if(response.status === 201) {
-        window.location.href = '/login';
-  
-      } else {
-        alert('Error registering user');
+    try {
+      const data = {
+        email: formEmail,
+        password: formPassword 
       }
 
-    } else {
-      alert('Please enter your details in the fields below!');
-    }
+      const response = await api.post('/login', data);
+       
+      if(response.status === 200) {
+        return window.location.href = '/sign';
 
-  }
+      } else {
+        return window.location.href = '/login';
+      }
+        
+    } catch (error) {
+      return alert("ERROR", error);    
+    }
+  }  
 
   return(
-    <div>
-      <GlobalStyle/>
-      <Body>
-        <H1>To be Herobank is to reinvent your financial life</H1>
-        <DivLogin>
-          <P>Please. Enter in your account.</P>
-          <Input 
-            type="email"
-            value={form.email_user} 
-            onChange={event => setForm(event.target.value)}
-            placeholder="Email"
-          />
-          <Input 
-            type="password"
-            value={form.password_user} 
-            onChange={event => setForm(event.target.value)}
-            placeholder="Password"
-          />
-          <Button onClick={handleSubmit()}>GO!</Button>
-        </DivLogin>
-      </Body>
-    </div>
+    <body>
+      <h1>To be Herobank is to reinvent your financial life</h1>
+        <p>Please. Enter in your account.</p>
+        <input 
+          type="email"
+          value={formEmail} 
+          onChange={event => setFormEmail(event.target.value)}
+          placeholder="Email"
+        />
+        <input 
+          type="password"
+          value={formPassword} 
+          onChange={event => setFormPassword(event.target.value)}
+          placeholder="Password"
+        />
+        <button onClick={() => handleSubmit()}>GO!</button>
+    </body>
   )
 }
