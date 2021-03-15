@@ -2,5 +2,5 @@
     "firstName" : "required: false",
     "lastName": "required: false",
     "email": "required: true",
-    "password": "required: true"
+    "password": "required: true not apperance to result"
 }
