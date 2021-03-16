@@ -2,7 +2,7 @@
 
 **Um sistema básico até o momento onde o usuário se cadastra e seus dados ficarão guardados no banco de dados. Logo em seguida ele terá a opção de clicar num botão para voltar ao login.**
 
-- Backend: Node
+- Back-end: Node
 - Front-end: React
 - Designer: Figma
 
@@ -19,10 +19,19 @@ npm i
 #### Como iniciar o server
 
 ```
+cd back  
+```
+
+```
 npx nodemon api/index.js  
 ```
 
 #### Como iniciar o Front
+
+```
+cd front  
+```
+
 ```
 npm start  
 ```
