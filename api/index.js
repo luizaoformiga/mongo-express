@@ -1,6 +1,6 @@
 import app from './app';
 import 'dotenv/config';
 
-const port = process.env.PORT || 7560;
-// http://localhost:7659
+const port = process.env.PORT || 7568;
+
 app.listen(port, () => console.log(`Server running`));
