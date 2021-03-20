@@ -1,1 +1,1 @@
-web: npx babel-node api/index.js
+web: npx nodemon src/index.js
