@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "scripts": {
-    "start": "npx babel-node src/index.js"
+    "start": "nodemon src/app/index.js"
   },
   "type": "module",
   "dependencies": {

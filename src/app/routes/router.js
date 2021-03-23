@@ -5,7 +5,7 @@ const route = express.Router();
 
 const routeLogin = new Login();
 
-route.get('/', routeLogin.get);
-route.post('/sign', routeLogin.post);
+route.get('/home', routeLogin.get);
+route.post('/home/login', routeLogin.post);
 
 export default route;
