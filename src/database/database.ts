@@ -3,15 +3,14 @@ import 'dotenv/config';
 
 mongoose.Promise = global.Promise;
 
-const URL = process.env.DATABASE_URL;
 const config = {
-  uri: URL,
+  uri: `${process.env.DATABASE_URL}`,
   options: {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
     useCreateIndex: true
-  },
+  }
 }
 
 mongoose.connection.on('open', () => {

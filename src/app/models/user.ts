@@ -1,5 +1,4 @@
 import Mongoose from 'mongoose';
-import crypto from 'crypto';
 
 const schema = new Mongoose.Schema({
     firstName: {
@@ -24,16 +23,12 @@ const schema = new Mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Password is required'],
-        select: false,
-        set: value => crypto
-          .createHash('md5')
-          .update(value)
-          .digest('hex')
+        select: false
     },     
 },   {
     timestamps: { createdAt: true, updatedAt: true },
     toJSON: { virtuals: true, getters: true,
-        transform(document, returns) {
+        transform(document: any, returns: any) {
             returns.id = returns._id
             delete returns._id
         }
