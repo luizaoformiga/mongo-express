@@ -1,13 +1,13 @@
 import Mongoose from 'mongoose';
 
 const schema = new Mongoose.Schema({
-    firstName: {
+    firstname: {
         type: String,
         required: false,
         minlegth: 3,
         maxlength: 99 
     },
-    lastName: {
+    lastname: {
       type: String,
       required: false,
       minlength: 3,
