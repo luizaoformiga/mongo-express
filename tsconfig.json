@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "lib": [
-      "es5",
-      "es6",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "dom"],
     "declaration": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
@@ -24,6 +20,8 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "target": "esnext",
-    "module": "commonjs",
-  }
+    "module": "commonjs"
+  },
+  "include": ["src", "app"],
+  "extends": "./tsconfig.paths.json"
 }

@@ -1,6 +1,0 @@
-{
-    "firstname" : "required: false",
-    "lastname": "required: false",
-    "email": "required: true",
-    "password": "required: true not apperance to result"
-}

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import LoginContracts from '../../services/contracts/loginContracts';
+import LoginContracts from '@/services/contracts/Login';
 
 export default class LoginController extends LoginContracts {
   async post(req: Request, res: Response) {
